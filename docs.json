@@ -50,11 +50,6 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://www.coplay.dev",
-          "icon": "book-open-cover"
-        },
-        {
           "anchor": "Community",
           "href": "http://discord.com/invite/KmGfEr6d3v",
           "icon": "discord"
