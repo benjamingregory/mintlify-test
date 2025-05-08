@@ -4,15 +4,9 @@ description: "A comprehensive guide to Coplay's user interface elements and feat
 icon: "window"
 ---
 
-# Coplay Interface Elements
-
 Coplay integrates seamlessly with Unity through an intuitive interface designed to enhance your game development workflow. This guide explains all the UI elements you'll encounter when using Coplay.
 
-## Main Interface Components
-
-The Coplay interface consists of several key components that allow you to interact with the AI assistant and manage your development context.
-
-### Context
+## Context
 
 The Context dropdown determines what information Coplay has access to when responding to your queries:
 
@@ -24,7 +18,7 @@ The Context dropdown determines what information Coplay has access to when respo
 
 **Example usage**: Select "Active Scene" when asking Coplay to help optimize game objects in your current scene, or select "Project Settings" when troubleshooting configuration issues.
 
-### Mode Selection
+## Mode Selection
 
 The Mode dropdown lets you select specialized AI modes optimized for different tasks:
 
@@ -35,11 +29,7 @@ The Mode dropdown lets you select specialized AI modes optimized for different t
 
 **Example usage**: Switch to "SceneGeneration" mode when asking Coplay to help design a level layout, or use "UIGeneration" when working on your game's user interface elements.
 
-### Model Selection
-
-<Frame caption="AI model selection dropdown">
-  ![Model selection](/images/model-selection.png)
-</Frame>
+## Model Selection
 
 Coplay lets you choose between different AI models, each with its own strengths:
 
@@ -51,11 +41,7 @@ Coplay lets you choose between different AI models, each with its own strengths:
 
 **Example usage**: Select "claude-3-7-sonnet" for complex programming tasks, or switch to "o4-mini" when you need quick responses for simpler questions.
 
-### Action Recording
-
-<Frame caption="Action recording panel showing recorded movements">
-  ![Action recording](/images/action-recording.png)
-</Frame>
+## Action Recording
 
 Coplay can record your actions in the Unity Editor, allowing you to:
 
@@ -66,17 +52,9 @@ Coplay can record your actions in the Unity Editor, allowing you to:
 
 When you've finished recording actions, you can save them with a custom name:
 
-<Frame caption="Save Recording dialog">
-  ![Save Recording dialog](/images/save-recording.png)
-</Frame>
-
 **Example usage**: Record a sequence of object placements to document your level design process, then ask Coplay to analyze the pattern or suggest improvements.
 
-### Action Context
-
-<Frame caption="Action context selection">
-  ![Action context](/images/action-context.png)
-</Frame>
+## Action Context
 
 The action context dropdown (showing "move" in the example) lets you specify what type of operation you're performing. This helps Coplay understand and assist with specific actions like:
 
@@ -92,10 +70,6 @@ The action context dropdown (showing "move" in the example) lets you specify wha
 
 Coplay offers extensive customization options through its settings interface.
 
-<Frame caption="Coplay settings panel">
-  ![Coplay settings](/images/coplay-settings.png)
-</Frame>
-
 Key settings include:
 
 - **Coplay User**: Your account email address
@@ -106,22 +80,10 @@ Key settings include:
 
 You can also manage custom rules through the "Edit Custom Coplay Rules" button, which opens this dialog:
 
-<Frame caption="Custom Coplay Rules editor">
-  ![Custom Coplay Rules](/images/custom-rules.png)
-</Frame>
-
 Custom rules allow you to create specialized instructions for Coplay that will be saved to `.coplayrules.md` in your project root folder.
 
 **Example usage**: Create custom rules like "Always comment public methods" or "Follow our team's naming convention" to ensure Coplay adheres to your project standards.
 
-## Keyboard Shortcuts
-
-| Action               | Windows                  | Mac                         |
-| -------------------- | ------------------------ | --------------------------- |
-| Open Coplay          | Ctrl\+G                  | Command\+G                  |
-| Start/Stop Recording | Ctrl\+Shift\+R           | Command\+Shift\+R           |
-| Save Recording       | Ctrl\+S (when recording) | Command\+S (when recording) |
-| Clear Conversation   | Ctrl\+Shift\+C           | Command\+Shift\+C           |
 
 ## Tips for Effective UI Navigation
 
