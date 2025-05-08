@@ -24,11 +24,9 @@
           {
             "group": "Using Coplay",
             "pages": [
-              "essentials/markdown",
+              "essentials/best-practices",
               "essentials/code",
-              "essentials/images",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "essentials/images"
             ]
           },
           {
