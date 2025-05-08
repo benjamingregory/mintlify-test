@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Coplay Documentation",
   "colors": {
-    "primary": "#442172",
+    "primary": "#7942C2",
     "light": "#442172",
-    "dark": "#7942C2"
+    "dark": "#442172"
   },
   "favicon": "/favicon.ico",
   "navigation": {
