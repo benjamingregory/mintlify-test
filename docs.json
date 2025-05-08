@@ -44,8 +44,7 @@
             "group": "Unity API Integration",
             "pages": ["api-reference/introduction"]
           }, {
-            "group": "Release Notes",
-            "pages": ["release-notes/index"]
+            "page": "release-notes/index"
           }
         ]
       }
