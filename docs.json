@@ -64,12 +64,12 @@
         },
         {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "href": "http://discord.com/invite/KmGfEr6d3v",
+          "icon": "discord"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://coplay.dev/blog",
           "icon": "newspaper"
         }
       ]
