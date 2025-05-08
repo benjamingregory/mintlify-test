@@ -42,7 +42,9 @@
         "groups": [
           {
             "group": "Unity API Integration",
-            "pages": ["api-reference/introduction", "release-notes/index"]
+            "pages": [
+              "api-reference/introduction", 
+              "release-notes/index"]
           }
         ]
       }
