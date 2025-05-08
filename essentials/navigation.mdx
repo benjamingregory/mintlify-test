@@ -1,0 +1,141 @@
+---
+title: "Understanding the UI"
+description: "A comprehensive guide to Coplay's user interface elements and features"
+icon: "window"
+---
+
+# Coplay Interface Elements
+
+Coplay integrates seamlessly with Unity through an intuitive interface designed to enhance your game development workflow. This guide explains all the UI elements you'll encounter when using Coplay.
+
+## Main Interface Components
+
+The Coplay interface consists of several key components that allow you to interact with the AI assistant and manage your development context.
+
+### Context Dropdown
+
+<Frame caption="Context dropdown menu showing available context options">
+  ![Context dropdown menu](/images/context-dropdown.png)
+</Frame>
+
+The Context dropdown determines what information Coplay has access to when responding to your queries:
+
+- **File Tree**: Provides access to your project's file structure
+- **Project Settings**: Gives context about your Unity project configuration
+- **Active Scene**: Includes information about the currently open scene
+- **Git History**: Provides access to version control information
+- **Packages**: Shows information about installed packages
+
+**Example usage**: Select "Active Scene" when asking Coplay to help optimize game objects in your current scene, or select "Project Settings" when troubleshooting configuration issues.
+
+### Agent Mode Selection
+
+<Frame caption="Agent mode selection dropdown">
+  ![Agent mode selection](/images/agent-mode.png)
+</Frame>
+
+The Agent dropdown lets you select specialized AI modes optimized for different tasks:
+
+- **Normal**: Balanced mode for general Unity development queries
+- **SceneGeneration**: Specialized mode for creating and modifying Unity scenes
+- **UIGeneration**: Focused on UI development tasks and solutions
+
+**Example usage**: Switch to "SceneGeneration" mode when asking Coplay to help design a level layout, or use "UIGeneration" when working on your game's user interface elements.
+
+### Model Selection
+
+<Frame caption="AI model selection dropdown">
+  ![Model selection](/images/model-selection.png)
+</Frame>
+
+Coplay lets you choose between different AI models, each with its own strengths:
+
+- **claude-3-7-sonnet**: Balanced model with strong reasoning capabilities (default)
+- **gpt-4.1**: Advanced model with strong code generation
+- **o3** / **o4-mini**: Faster response times for simpler queries
+- **grok-3**: Alternative model with different reasoning patterns
+- **gemini-2-5-pro** / **gemini-2-5-flash**: Google's AI models with varying capabilities
+
+**Example usage**: Select "claude-3-7-sonnet" for complex programming tasks, or switch to "o4-mini" when you need quick responses for simpler questions.
+
+### Action Recording
+
+<Frame caption="Action recording panel showing recorded movements">
+  ![Action recording](/images/action-recording.png)
+</Frame>
+
+Coplay can record your actions in the Unity Editor, allowing you to:
+
+1. Track movements and changes to game objects
+2. Delete specific recorded actions using the "×" button
+3. Clear all recorded actions at once
+4. Save recordings for future reference
+
+When you've finished recording actions, you can save them with a custom name:
+
+<Frame caption="Save Recording dialog">
+  ![Save Recording dialog](/images/save-recording.png)
+</Frame>
+
+**Example usage**: Record a sequence of object placements to document your level design process, then ask Coplay to analyze the pattern or suggest improvements.
+
+### Action Context
+
+<Frame caption="Action context selection">
+  ![Action context](/images/action-context.png)
+</Frame>
+
+The action context dropdown (showing "move" in the example) lets you specify what type of operation you're performing. This helps Coplay understand and assist with specific actions like:
+
+- Moving objects
+- Scaling objects
+- Rotating objects
+- Adding components
+- And more
+
+**Example usage**: Select "move" when positioning objects in a scene, then ask Coplay for suggestions on optimal placement.
+
+## Settings Interface
+
+Coplay offers extensive customization options through its settings interface.
+
+<Frame caption="Coplay settings panel">
+  ![Coplay settings](/images/coplay-settings.png)
+</Frame>
+
+Key settings include:
+
+- **Coplay User**: Your account email address
+- **Device ID**: Unique identifier for your installation
+- **Highlight Changes**: When enabled, Coplay will highlight changes it makes to your code
+- **Enable Autocomplete**: Activates AI-powered code completion as you type
+- **Show New Task Confirmation**: Enables confirmation dialog when starting new tasks
+
+You can also manage custom rules through the "Edit Custom Coplay Rules" button, which opens this dialog:
+
+<Frame caption="Custom Coplay Rules editor">
+  ![Custom Coplay Rules](/images/custom-rules.png)
+</Frame>
+
+Custom rules allow you to create specialized instructions for Coplay that will be saved to `.coplayrules.md` in your project root folder.
+
+**Example usage**: Create custom rules like "Always comment public methods" or "Follow our team's naming convention" to ensure Coplay adheres to your project standards.
+
+## Keyboard Shortcuts
+
+| Action               | Windows                 | Mac                        |
+| -------------------- | ----------------------- | -------------------------- |
+| Open Coplay          | Ctrl+G                  | Command+G                  |
+| Start/Stop Recording | Ctrl+Shift+R            | Command+Shift+R            |
+| Save Recording       | Ctrl+S (when recording) | Command+S (when recording) |
+| Clear Conversation   | Ctrl+Shift+C            | Command+Shift+C            |
+
+## Tips for Effective UI Navigation
+
+1. **Context-Aware Queries**: Always select the appropriate context for your question to get the most relevant answers
+2. **Mode Switching**: Change agent modes based on your current development focus
+3. **Model Selection**: Use faster models for simple tasks and more advanced models for complex problems
+4. **Action Recording**: Use action recording to document processes that you want to analyze or replicate later
+5. **Custom Rules**: Set up custom rules to ensure Coplay aligns with your team's development standards
+
+For more detailed information on configuring Coplay's behavior, see the [Settings Guide](/essentials/settings).

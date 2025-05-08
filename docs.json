@@ -26,7 +26,9 @@
             "pages": [
               "essentials/best-practices",
               "essentials/code",
-              "essentials/images"
+              "essentials/images",
+              "essentials/navigation",
+              "essentials/ui-images-guide"
             ]
           },
           {
@@ -40,8 +42,7 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": [
-              "api-reference/release-notes/index"]
+            "pages": ["api-reference/release-notes/index"]
           }
         ]
       }
