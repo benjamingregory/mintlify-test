@@ -16,105 +16,14 @@ Here are the ways Coplay can assist with your Unity coding tasks:
 
 Ask Coplay to create scripts for common game mechanics, and it will generate well-structured C# code tailored for Unity:
 
-```csharp PlayerMovement.cs
-using UnityEngine;
-
-public class PlayerMovement : MonoBehaviour
-{
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float turnSpeed = 180f;
-
-    private CharacterController controller;
-
-    private void Awake()
-    {
-        controller = GetComponent<CharacterController>();
-        if (controller == null)
-        {
-            Debug.LogError("Character Controller component is missing!");
-        }
-    }
-
-    private void Update()
-    {
-        // Get input axes
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        // Calculate movement direction
-        Vector3 moveDirection = new Vector3(horizontal, 0, vertical).normalized;
-        if (moveDirection.magnitude > 0.1f)
-        {
-            // Rotate towards movement direction
-            float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, targetAngle, 0);
-
-            // Move in facing direction
-            controller.Move(moveDirection * moveSpeed * Time.deltaTime);
-        }
-    }
-}
-```
-
 #### 2. Code Explanation
 
 Coplay can explain complex Unity concepts and code patterns:
-
-```csharp
-// Ask Coplay: "Can you explain how quaternions work in Unity?"
-
-/*
-Coplay might explain:
-Quaternions in Unity represent rotations in 3D space. Unlike Euler angles (x,y,z degrees),
-quaternions avoid gimbal lock issues and provide smoother rotations.
-
-Key quaternion operations in Unity:
-- Quaternion.Euler(x,y,z): Converts Euler angles to a quaternion
-- Quaternion.LookRotation(direction): Creates a rotation facing the direction
-- Quaternion.Slerp(from, to, t): Smoothly interpolates between rotations
-- transform.rotation: Property that uses quaternions to store object rotation
-
-Example of smooth rotation toward a target:
-*/
-
-// Smoothly rotate towards a target
-Quaternion targetRotation = Quaternion.LookRotation(targetPosition - transform.position);
-transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-```
 
 #### 3. Debugging Assistance
 
 When you're stuck with a bug, Coplay can analyze your code and suggest fixes:
 
-```csharp
-// Original code with a bug
-void ApplyDamage(GameObject target, float amount)
-{
-    Health health = target.GetComponent<Health>();
-    health.TakeDamage(amount);
-}
-
-// After asking Coplay about the potential null reference exception:
-
-void ApplyDamage(GameObject target, float amount)
-{
-    if (target == null)
-    {
-        Debug.LogWarning("Target is null, cannot apply damage");
-        return;
-    }
-
-    Health health = target.GetComponent<Health>();
-    if (health != null)
-    {
-        health.TakeDamage(amount);
-    }
-    else
-    {
-        Debug.LogWarning("Target does not have a Health component");
-    }
-}
-```
 
 ## Best Practices for Coding with Coplay
 
