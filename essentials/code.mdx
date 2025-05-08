@@ -1,37 +1,185 @@
 ---
-title: 'Code Blocks'
-description: 'Display inline code and code blocks'
-icon: 'code'
+title: "Coding with Coplay"
+description: "How Coplay assists with Unity C# development"
+icon: "code"
 ---
 
-## Basic
+## Code Assistance in Coplay
 
-### Inline Code
+Coplay is designed to enhance your coding experience in Unity by providing intelligent code assistance, generation, and problem-solving capabilities.
 
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
+### Types of Code Help
 
-```
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
-```
+Here are the ways Coplay can assist with your Unity coding tasks:
 
-### Code Block
+#### 1. Code Generation
 
-Use [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) by enclosing code in three backticks and follow the leading ticks with the programming language of your snippet to get syntax highlighting. Optionally, you can also write the name of your code after the programming language.
+Ask Coplay to create scripts for common game mechanics, and it will generate well-structured C# code tailored for Unity:
 
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
+```csharp PlayerMovement.cs
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float turnSpeed = 180f;
+
+    private CharacterController controller;
+
+    private void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+        if (controller == null)
+        {
+            Debug.LogError("Character Controller component is missing!");
+        }
+    }
+
+    private void Update()
+    {
+        // Get input axes
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        // Calculate movement direction
+        Vector3 moveDirection = new Vector3(horizontal, 0, vertical).normalized;
+        if (moveDirection.magnitude > 0.1f)
+        {
+            // Rotate towards movement direction
+            float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, targetAngle, 0);
+
+            // Move in facing direction
+            controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+        }
     }
 }
 ```
 
-````md
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
+#### 2. Code Explanation
+
+Coplay can explain complex Unity concepts and code patterns:
+
+```csharp
+// Ask Coplay: "Can you explain how quaternions work in Unity?"
+
+/*
+Coplay might explain:
+Quaternions in Unity represent rotations in 3D space. Unlike Euler angles (x,y,z degrees),
+quaternions avoid gimbal lock issues and provide smoother rotations.
+
+Key quaternion operations in Unity:
+- Quaternion.Euler(x,y,z): Converts Euler angles to a quaternion
+- Quaternion.LookRotation(direction): Creates a rotation facing the direction
+- Quaternion.Slerp(from, to, t): Smoothly interpolates between rotations
+- transform.rotation: Property that uses quaternions to store object rotation
+
+Example of smooth rotation toward a target:
+*/
+
+// Smoothly rotate towards a target
+Quaternion targetRotation = Quaternion.LookRotation(targetPosition - transform.position);
+transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+```
+
+#### 3. Debugging Assistance
+
+When you're stuck with a bug, Coplay can analyze your code and suggest fixes:
+
+```csharp
+// Original code with a bug
+void ApplyDamage(GameObject target, float amount)
+{
+    Health health = target.GetComponent<Health>();
+    health.TakeDamage(amount);
+}
+
+// After asking Coplay about the potential null reference exception:
+
+void ApplyDamage(GameObject target, float amount)
+{
+    if (target == null)
+    {
+        Debug.LogWarning("Target is null, cannot apply damage");
+        return;
+    }
+
+    Health health = target.GetComponent<Health>();
+    if (health != null)
+    {
+        health.TakeDamage(amount);
+    }
+    else
+    {
+        Debug.LogWarning("Target does not have a Health component");
     }
 }
 ```
-````
+
+## Best Practices for Coding with Coplay
+
+### Be Specific with Requests
+
+The more specific your coding request, the better Coplay can assist you:
+
+```
+// Less effective request:
+"Write code for a player"
+
+// More effective request:
+"Create a C# script for a first-person controller with smooth camera movement,
+jumping, and the ability to sprint when holding the Shift key"
+```
+
+### Include Context
+
+When asking for help with existing code, include relevant parts of your code for context:
+
+```csharp
+// When asking about an error, include the relevant code and error message
+"I'm getting a 'NullReferenceException' in this enemy AI controller code:
+
+public class EnemyAI : MonoBehaviour
+{
+    [SerializeField] private Transform target;
+
+    void Start()
+    {
+        StartCoroutine(FollowTarget());
+    }
+
+    IEnumerator FollowTarget()
+    {
+        while (true)
+        {
+            // Error happens on this line
+            Vector3 direction = (target.position - transform.position).normalized;
+            transform.position += direction * Time.deltaTime;
+            yield return null;
+        }
+    }
+}
+"
+```
+
+### Iterative Refinement
+
+You can iteratively refine code with Coplay:
+
+1. Ask for initial implementation
+2. Review the code
+3. Ask for specific modifications or optimizations
+4. Repeat until satisfied
+
+## Model Selection for Coding Tasks
+
+Coplay lets you choose from different AI models. For coding tasks:
+
+- Use faster models for quick code snippets and simple explanations
+- Use more advanced models for complex implementations and debugging challenges
+
+You can adjust your model preference in Coplay settings.
+
+## Join Our Community
+
+For more coding tips and to share your Coplay coding experiences, join our [Discord community](http://discord.com/invite/KmGfEr6d3v).

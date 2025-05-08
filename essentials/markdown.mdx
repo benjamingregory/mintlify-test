@@ -1,88 +1,132 @@
 ---
-title: 'Markdown Syntax'
-description: 'Text, title, and styling in standard markdown'
-icon: 'text-size'
+title: "Effective Communication with Coplay"
+description: "How to structure your prompts for better results with Coplay"
+icon: "message-bot"
 ---
 
-## Titles
+## How Coplay Understands You
 
-Best used for section headers.
+Coplay is designed to understand natural language, but structuring your requests in certain ways can help you get better and more accurate responses. This guide will help you communicate effectively with Coplay in Unity.
 
-```md
-## Titles
+## Request Types
+
+Here are the main types of requests you can make to Coplay:
+
+### Questions
+
+Best for when you need information or explanations.
+
 ```
-
-### Subtitles
-
-Best use to subsection headers.
-
-```md
-### Subtitles
+"How do I implement a jump mechanic in Unity?"
+"What's the difference between Update and FixedUpdate?"
+"Why is my raycast not detecting collisions?"
 ```
 
 <Tip>
-
-Each **title** and **subtitle** creates an anchor and also shows up on the table of contents on the right.
-
+  Be specific with your questions. The more details you provide, the more
+  tailored Coplay's response will be to your situation.
 </Tip>
 
-## Text Formatting
+### Code Generation
 
-We support most markdown formatting. Simply add `**`, `_`, or `~` around text to format it.
+Ask Coplay to write code for you by clearly stating what you need.
 
-| Style         | How to write it   | Result          |
-| ------------- | ----------------- | --------------- |
-| Bold          | `**bold**`        | **bold**        |
-| Italic        | `_italic_`        | _italic_        |
-| Strikethrough | `~strikethrough~` | ~strikethrough~ |
-
-You can combine these. For example, write `**_bold and italic_**` to get **_bold and italic_** text.
-
-You need to use HTML to write superscript and subscript text. That is, add `<sup>` or `<sub>` around your text.
-
-| Text Size   | How to write it          | Result                 |
-| ----------- | ------------------------ | ---------------------- |
-| Superscript | `<sup>superscript</sup>` | <sup>superscript</sup> |
-| Subscript   | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
-
-## Linking to Pages
-
-You can add a link by wrapping text in `[]()`. You would write `[link to google](https://google.com)` to [link to google](https://google.com).
-
-Links to pages in your docs need to be root-relative. Basically, you should include the entire folder path. For example, `[link to text](/writing-content/text)` links to the page "Text" in our components section.
-
-Relative links like `[link to text](../text)` will open slower because we cannot optimize them as easily.
-
-## Blockquotes
-
-### Singleline
-
-To create a blockquote, add a `>` in front of a paragraph.
-
-> Dorothy followed her through many of the beautiful rooms in her castle.
-
-```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+"Write a script for a third-person camera controller"
+"Create a health system with damage and healing functions"
+"Generate a JSON parser for my save game data"
 ```
 
-### Multiline
+### Code Analysis
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+Share your existing code for Coplay to analyze, explain, or improve.
+
+```
+"What's wrong with this code? [paste your code]"
+"Optimize this function for better performance: [paste function]"
+"Explain how this script works: [paste script]"
+```
+
+## Text Formatting for Better Results
+
+Formatting your messages can help Coplay understand your needs better.
+
+| Technique       | How to use it                            | Example                                                                                                 |
+| --------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Be specific     | Include details about your goal          | "Create a script that makes the camera follow the player **with smooth damping** and **height offset**" |
+| Use sections    | Separate different parts of your request | "**Context**: I'm making a 2D platformer. **Question**: How should I handle wall jumping?"              |
+| Provide context | Explain your project setup               | "I'm using **Unity 2022.1** with the **URP** rendering pipeline and need help with..."                  |
+
+## Effective Prompting Techniques
+
+### Step-by-Step Instructions
+
+When you need Coplay to help with a complex task, break it down into steps:
+
+```
+"I want to create an inventory system. First, help me design the data structure.
+Once that's done, I'll ask for help implementing the UI."
+```
+
+### Iterative Refinement
+
+Start with a basic request and then refine it based on Coplay's response:
+
+> Initial: "Create a player movement script"
 >
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+> Follow-up: "That's good, but can you modify it to include sprinting when the Shift key is pressed?"
 
-```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
+## Code Examples
+
+When sharing code with Coplay, use code blocks to make it easier to read:
+
+```csharp
+// Ask about this code
+void Update() {
+    if (Input.GetKeyDown(KeyCode.Space)) {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+}
+```
+
+## Unity-Specific Terminology
+
+Using accurate Unity terminology helps Coplay understand exactly what you're asking:
+
+| General Term | Unity-Specific Term            |
+| ------------ | ------------------------------ |
+| 3D object    | GameObject                     |
+| Property     | Component, Parameter, or Field |
+| Screen       | Scene, Game View, or UI Canvas |
+| Code file    | Script or MonoBehaviour        |
+
+## Mathematical Expressions
+
+Coplay can understand mathematical expressions, which is useful for game physics and graphics questions:
+
+<Latex>F = m \times a</Latex>
+
+```
+"How do I calculate the force needed to make my object jump to a height of h
+using the formula F = m × a?"
+```
+
+## Sample Conversation Flow
+
+Here's an example of an effective conversation with Coplay:
+
+> **You**: I'm trying to make an enemy that patrols between waypoints. Can you help me with the script?
 >
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
-```
+> **Coplay**: [Provides basic patrol script]
+>
+> **You**: Thanks! Now how can I make the enemy detect and chase the player when they get close?
+>
+> **Coplay**: [Builds on previous script to add player detection and chase behavior]
+>
+> **You**: One last thing - how do I make the enemy return to patrolling when it loses sight of the player?
+>
+> **Coplay**: [Completes the AI behavior with returning to patrol functionality]
 
-### LaTeX
+## Join Our Community
 
-Mintlify supports [LaTeX](https://www.latex-project.org) through the Latex component.
-
-<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
-
-```md
-<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
-```
+For more tips on effectively using Coplay, join our [Discord community](http://discord.com/invite/KmGfEr6d3v) where you can share your experiences and learn from other users.

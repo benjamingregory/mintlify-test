@@ -1,87 +1,126 @@
 ---
-title: 'Navigation'
-description: 'The navigation field in docs.json defines the pages that go in the navigation menu'
-icon: 'map'
+title: "Navigating the Coplay Interface"
+description: "Understanding the Coplay UI in Unity Editor"
+icon: "compass"
 ---
 
-The navigation menu is the list of links on every website.
+## The Coplay Interface
 
-You will likely update `docs.json` every time you add a new page. Pages do not show up automatically.
+After installing Coplay and signing in, you'll have access to its interface directly within the Unity Editor. Understanding how to navigate this interface will help you make the most of Coplay's capabilities.
 
-## Navigation syntax
+## Accessing Coplay
 
-Our navigation syntax is recursive which means you can make nested navigation groups. You don't need to include `.mdx` in page names.
+There are two main ways to access Coplay in Unity:
+
+1. **Menu Bar**: Click on the **Coplay** option in the Unity Editor's top menu bar
+2. **Keyboard Shortcut**: Use **Command+G** (Mac) or **Control+G** (Windows)
+
+<Note>
+  The keyboard shortcut is the quickest way to toggle the Coplay panel while
+  working in Unity.
+</Note>
+
+## Interface Components
+
+### Main Chat Panel
+
+The central component of Coplay is the chat interface, which consists of:
+
+<img
+  src="/images/hero-light.png"
+  alt="Coplay Chat Interface"
+  className="block dark:hidden rounded-lg"
+/>
+
+<img
+  src="/Group1.png"
+  alt="Coplay Chat Interface Dark"
+  className="hidden dark:block rounded-lg"
+/>
+
+1. **Message History**: Displays the conversation between you and Coplay
+2. **Input Field**: Where you type your questions and requests
+3. **Send Button**: Submits your message to Coplay
+4. **Clear Conversation Button**: Starts a fresh conversation
+
+### Toolbar
+
+At the top of the Coplay panel, you'll find a toolbar with several useful options:
 
 <CodeGroup>
 
-```json Regular Navigation
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Getting Started",
-          "pages": ["quickstart"]
-        }
-      ]
-    }
-  ]
-}
-```
-
-```json Nested Navigation
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Getting Started",
-          "pages": [
-            "quickstart",
-            {
-              "group": "Nested Reference Pages",
-              "pages": ["nested-reference-page"]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+```text Available Commands
+- Sign In/Out: Authenticate your Coplay session
+- Settings: Configure Coplay preferences
+- Model Selection: Choose which AI model to use
+- Help: Access quick help information
+- Minimize: Collapse the Coplay panel
 ```
 
 </CodeGroup>
 
-## Folders
+### Context Panel
 
-Simply put your MDX files in folders and update the paths in `docs.json`.
+Coplay understands the context of your Unity project, including:
 
-For example, to have a page at `https://yoursite.com/your-folder/your-page` you would make a folder called `your-folder` containing an MDX file called `your-page.mdx`.
+- The currently open scene
+- Selected game objects
+- Active scripts and components
+- Project structure and assets
 
-<Warning>
+This contextual awareness helps Coplay provide more relevant assistance.
 
-You cannot use `api` for the name of a folder unless you nest it inside another folder. Mintlify uses Next.js which reserves the top-level `api` folder for internal server calls. A folder name such as `api-reference` would be accepted.
+## Using Coplay Effectively
 
-</Warning>
+### Context Commands
 
-```json Navigation With Folder
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Group Name",
-          "pages": ["your-folder/your-page"]
-        }
-      ]
-    }
-  ]
-}
+You can enhance Coplay's understanding by providing specific context:
+
+<CodeGroup>
+
+```text Context Commands
+"Look at my PlayerController script"
+"Analyze the selected GameObject"
+"Consider the current scene hierarchy"
+"Focus on the collision system in my game"
 ```
 
-## Hidden Pages
+</CodeGroup>
 
-MDX files not included in `docs.json` will not show up in the sidebar but are accessible through the search bar and by linking directly to them.
+### Conversation Flow
+
+Coplay conversations work best when they follow a natural progression:
+
+1. **Start with a clear question or request**
+2. **Review Coplay's response**
+3. **Ask follow-up questions for clarification or to explore related topics**
+4. **Implement suggestions and report back on results if needed**
+
+## Customizing the Interface
+
+You can customize how Coplay appears in your Unity Editor through the Settings menu:
+
+- **Theme**: Choose between light, dark, or system-matched themes
+- **Font Size**: Adjust for better readability
+- **Window Position**: Dock Coplay in different areas of the Unity Editor
+- **Persistence**: Configure whether Coplay stays open when switching contexts
+
+<Warning>
+  Changing some settings may require restarting the Unity Editor to take effect.
+</Warning>
+
+## Keyboard Shortcuts
+
+Learning these keyboard shortcuts will help you work more efficiently with Coplay:
+
+| Action                   | Mac            | Windows        |
+| ------------------------ | -------------- | -------------- |
+| Toggle Coplay Panel      | Command+G      | Control+G      |
+| Submit Message           | Enter/Return   | Enter          |
+| New Line in Input        | Shift+Enter    | Shift+Enter    |
+| Clear Input              | Esc            | Esc            |
+| Navigate Message History | Up/Down Arrows | Up/Down Arrows |
+
+## Need Help?
+
+If you have any questions or encounter any issues with the Coplay interface, join our [Discord community](http://discord.com/invite/KmGfEr6d3v) for assistance from the team and other users.

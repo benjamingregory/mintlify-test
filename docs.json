@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Coplay Documentation",
   "colors": {
-    "primary": "#442172",
+    "primary": "#e42575",
     "light": "#07C983",
-    "dark": "#442172"
+    "dark": "#1a1a25"
   },
   "favicon": "/favicon.ico",
   "navigation": {
@@ -22,15 +22,22 @@
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Using Coplay",
             "pages": [
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
-              "essentials/settings",
               "essentials/navigation",
               "essentials/reusable-snippets"
             ]
+          },
+          {
+            "group": "Configuration",
+            "pages": ["essentials/settings"]
+          },
+          {
+            "group": "Updates",
+            "pages": ["release-notes/index"]
           }
         ]
       },
@@ -38,19 +45,8 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
+            "group": "Unity API Integration",
+            "pages": ["api-reference/introduction"]
           }
         ]
       }
@@ -59,7 +55,7 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "href": "https://www.coplay.dev",
           "icon": "book-open-cover"
         },
         {
@@ -69,7 +65,7 @@
         },
         {
           "anchor": "Blog",
-          "href": "https://coplay.dev/blog",
+          "href": "https://www.coplay.dev/blog",
           "icon": "newspaper"
         }
       ]
@@ -88,15 +84,16 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Started",
+      "href": "http://discord.com/invite/KmGfEr6d3v"
     }
   },
   "footer": {
     "socials": {
       "x": "https://x.com/JosvdWest",
       "github": "https://github.com/coplayDev",
-      "linkedin": "https://linkedin.com/company/coplaydev"
+      "linkedin": "https://linkedin.com/company/coplaydev",
+      "discord": "http://discord.com/invite/KmGfEr6d3v"
     }
   }
 }

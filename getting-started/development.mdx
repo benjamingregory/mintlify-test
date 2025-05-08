@@ -1,107 +1,156 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: "Using Coplay"
+description: "Get the most out of Coplay in your Unity development workflow"
 ---
 
 <Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding. <br />
-  Please upgrade to ```docs.json``` before proceeding and delete the legacy ```mint.json``` file.
+  **Prerequisite**: Ensure you have Coplay properly installed in your Unity
+  project before proceeding. <br />
+  If you haven't installed Coplay yet, please follow our [Installation Guide](/getting-started/quickstart)
+  first.
 </Info>
 
-Follow these steps to install and run Mintlify on your operating system:
+## Getting Started with Coplay
 
-**Step 1**: Install Mintlify:
+Once you have Coplay installed and authenticated, you're ready to start using it to enhance your Unity development workflow. Here's how to get started:
+
+**Step 1**: Open Coplay in Unity:
 
 <CodeGroup>
-
-  ```bash npm
-  npm i -g mintlify
+  ```text Mac
+  Command + G
   ```
 
-```bash yarn
-yarn global add mintlify
+```text Windows
+Control + G
 ```
 
 </CodeGroup>
 
-**Step 2**: Navigate to the docs directory (where the `docs.json` file is located) and execute the following command:
+**Step 2**: Start interacting with Coplay by typing in your questions or commands in the chat panel.
 
-```bash
-mintlify dev
+## Key Features
+
+### Code Assistance
+
+Coplay can help you with various coding tasks in Unity:
+
+```csharp
+// Ask Coplay about Unity concepts like:
+"How do I implement a character controller in Unity?"
+
+// Or get specific code help:
+"Write a script to make my camera follow the player with smooth damping"
+
+// Debug existing code:
+"Why is my collision detection not working properly?"
 ```
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+### Context-Aware Conversations
 
-### Custom Ports
+Coplay understands your Unity project context, making it easier to get relevant help:
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
+- Refer to existing GameObjects, scripts, and components in your project
+- Ask about specific scenes or assets
+- Get tailored advice based on your project structure
 
-```bash
-mintlify dev --port 3333
+### Workflow Integration
+
+<CardGroup cols={2}>
+  <Card title="Scene Analysis" icon="eye">
+    Coplay can analyze your current scene and provide suggestions for
+    optimization and improvements.
+  </Card>
+  <Card title="Documentation References" icon="book">
+    Quickly access Unity documentation and best practices without leaving the
+    editor.
+  </Card>
+  <Card title="Code Generation" icon="code">
+    Generate code snippets and entire scripts tailored to your project's needs.
+  </Card>
+  <Card title="Learning Support" icon="graduation-cap">
+    Get explanations of Unity concepts and techniques as you work.
+  </Card>
+</CardGroup>
+
+## Advanced Usage
+
+### Customizing Coplay
+
+You can customize Coplay's behavior to better suit your workflow:
+
+```text
+Settings > Preferences > Coplay
 ```
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+Customize options like:
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
+- Model selection (choose from different AI models)
+- Response verbosity
+- Code formatting preferences
+- Theme and UI preferences
 
-## Mintlify Versions
+### Working with Complex Workflows
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
+For more complex tasks, you can use Coplay in an iterative manner:
 
-<CodeGroup>
+1. Start with a high-level description of what you want to accomplish
+2. Refine your request based on Coplay's responses
+3. Ask for explanations of the suggested code or approaches
+4. Implement the solution with Coplay's guidance
 
-```bash npm
-npm i -g mintlify@latest
-```
+## Best Practices
 
-```bash yarn
-yarn global upgrade mintlify
-```
+<AccordionGroup>
+  <Accordion title="Be Specific in Your Requests">
+    The more specific your query, the more accurate Coplay's response will be.
+    Include relevant details about your project, requirements, and constraints.
+    **Example**: Instead of asking "How do I make a game?", try "How do I
+    implement a 2D platformer character controller with wall jumping in Unity?"
+  </Accordion>
 
-</CodeGroup>
+  <Accordion title="Use Project Context">
+    Reference existing components and scripts in your project to get more
+    tailored assistance. **Example**: "I have a PlayerController script that
+    handles movement, but I want to add a dash ability. Here's my current
+    movement code: ..."
+  </Accordion>
 
-## Validating Links
-
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
-
-```bash
-mintlify broken-links
-```
-
-## Deployment
-
-<Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
-</Tip>
-
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Code Formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+  <Accordion title="Iterative Refinement">
+    Don't expect perfect solutions on the first try. Use an iterative approach
+    to refine your solutions. 1. Start with a basic question 2. Review Coplay's
+    response 3. Ask follow-up questions to address any gaps 4. Test
+    implementations and return with specific issues
+  </Accordion>
+</AccordionGroup>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
+  <Accordion title="Coplay isn't responding or is slow">
+    Try the following:
+    1. Check your internet connection
+    2. Restart the Unity Editor
+    3. Re-authenticate Coplay if needed
+    4. If problems persist, try choosing a different AI model in the settings
   </Accordion>
 
-  <Accordion title="Issue: Encountering an unknown error">
+  <Accordion title="Implementation suggestions aren't working correctly">
+    This could be due to:
+    1. Version differences - ensure you're using a compatible Unity version
+    2. Missing context - provide more details about your project setup
+    3. Conflicting scripts - check for interactions with existing code
+    
+    Try explaining the specific error you're encountering to get more targeted help.
+  </Accordion>
   
-    Solution: Go to the root of your device and delete the \~/.mintlify folder. Afterwards, run `mintlify dev` again.
+  <Accordion title="Authentication issues">
+    If you're having trouble signing in:
+    1. Ensure you're connected to the internet
+    2. Clear browser cookies and try again
+    3. Check that your account has access to the Coplay beta
+    4. Try signing out and back in
   </Accordion>
 </AccordionGroup>
 
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+Need more help? Join our [Discord community](http://discord.com/invite/KmGfEr6d3v) for support from the Coplay team and other users.

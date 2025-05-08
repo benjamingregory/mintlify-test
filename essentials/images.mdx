@@ -1,59 +1,153 @@
 ---
-title: 'Images and Embeds'
-description: 'Add image, video, and other HTML elements'
-icon: 'image'
+title: "Visual Features in Coplay"
+description: "How Coplay visualizes and understands Unity scenes and assets"
+icon: "eye"
 ---
 
 <img
-  style={{ borderRadius: '0.5rem' }}
-  src="https://mintlify-assets.b-cdn.net/bigbend.jpg"
+  style={{ borderRadius: "0.5rem" }}
+  src="/Group1.png"
+  alt="Coplay analyzing a Unity scene"
 />
 
-## Image
+## Scene Understanding
 
-### Using Markdown
+One of Coplay's most powerful features is its ability to understand and reason about visual elements in your Unity project. Coplay can analyze your scenes, GameObjects, materials, and more to provide context-aware assistance.
 
-The [markdown syntax](https://www.markdownguide.org/basic-syntax/#images) lets you add images using the following code
+### Scene Analysis
 
-```md
-![title](/path/image.jpg)
+Ask Coplay to analyze your current scene to get insights and suggestions:
+
+```
+"Analyze my current scene for performance issues"
+"Help me understand the hierarchy of this level"
+"What could I improve about my character's animation setup?"
 ```
 
-Note that the image file size must be less than 5MB. Otherwise, we recommend hosting on a service like [Cloudinary](https://cloudinary.com/) or [S3](https://aws.amazon.com/s3/). You can then use that URL and embed.
+### GameObject Inspection
 
-### Using Embeds
+Coplay can inspect selected GameObjects and provide detailed information:
 
-To get more customizability with images, you can also use [embeds](/writing-content/embed) to add images
+<img
+  style={{
+    borderRadius: "0.5rem",
+    maxWidth: "600px",
+    margin: "0 auto",
+    display: "block",
+  }}
+  src="/images/hero-light.png"
+  alt="Coplay inspecting a GameObject"
+/>
 
-```html
-<img height="200" src="/path/image.jpg" />
+## Visual Debugging
+
+Coplay helps you visualize and debug issues in your Unity project.
+
+### Debug Visualization
+
+Ask Coplay to help you visualize debugging information:
+
+```csharp
+// Ask Coplay to generate code for debug visualization
+"Create debug visualization for my character's pathfinding"
+
+// Coplay might suggest:
+void OnDrawGizmos()
+{
+    Gizmos.color = Color.yellow;
+
+    // Draw the path
+    if (path != null && path.Length > 0)
+    {
+        for (int i = 0; i < path.Length - 1; i++)
+        {
+            Gizmos.DrawLine(path[i], path[i + 1]);
+        }
+    }
+
+    // Draw the detection range
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(transform.position, detectionRadius);
+}
 ```
 
-## Embeds and HTML elements
+## Learning Through Visuals
 
 <iframe
   width="560"
   height="315"
-  src="https://www.youtube.com/embed/4KzFe50RQkQ"
-  title="YouTube video player"
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  title="Coplay Tutorial: Understanding Unity's Animation System"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
-  style={{ width: '100%', borderRadius: '0.5rem' }}
+  style={{ width: "100%", borderRadius: "0.5rem" }}
 ></iframe>
 
 <br />
 
 <Tip>
-
-Mintlify supports [HTML tags in Markdown](https://www.markdownguide.org/basic-syntax/#html). This is helpful if you prefer HTML tags to Markdown syntax, and lets you create documentation with infinite flexibility.
-
+  Coplay works best when it can see your Unity Editor. For complex problems,
+  consider sharing a screenshot of your scene or hierarchy with Coplay for more
+  accurate assistance.
 </Tip>
 
-### iFrames
+### Video Tutorials
 
-Loads another HTML page within the document. Most commonly used for embedding videos.
+Coplay can recommend specific video tutorials based on what you're working on:
 
-```html
-<iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
 ```
+"Show me tutorials on implementing a dialogue system"
+"I need help with Unity's new Input System"
+"What's the best way to learn shader programming for Unity?"
+```
+
+## 3D Model and Asset Analysis
+
+Coplay can provide insights on your 3D models and assets:
+
+```
+"Is this model optimized for mobile?"
+"How can I improve the textures on this character?"
+"What's the polycount of this selected model?"
+```
+
+## UI Design Assistance
+
+Coplay can help you design and implement UI systems in Unity:
+
+```csharp
+// Ask Coplay for UI layout suggestions
+"Design a mobile-friendly inventory UI"
+
+// Coplay might suggest code and layout considerations:
+[SerializeField] private int gridSize = 5;
+[SerializeField] private float cellSize = 100f;
+[SerializeField] private float cellSpacing = 10f;
+[SerializeField] private GameObject inventoryItemPrefab;
+
+void CreateInventoryGrid(Transform parent)
+{
+    // Calculate the total size
+    float totalWidth = (cellSize + cellSpacing) * gridSize - cellSpacing;
+
+    // Create the grid
+    for (int y = 0; y < gridSize; y++)
+    {
+        for (int x = 0; x < gridSize; x++)
+        {
+            // Create item slot
+            GameObject slot = Instantiate(inventoryItemPrefab, parent);
+            RectTransform rectTransform = slot.GetComponent<RectTransform>();
+
+            // Position the slot
+            float xPos = x * (cellSize + cellSpacing);
+            float yPos = -y * (cellSize + cellSpacing);
+            rectTransform.anchoredPosition = new Vector2(xPos, yPos);
+            rectTransform.sizeDelta = new Vector2(cellSize, cellSize);
+        }
+    }
+}
+```
+
+Join our [Discord community](http://discord.com/invite/KmGfEr6d3v) to share your Coplay visual integration experiences and see what others have created!
