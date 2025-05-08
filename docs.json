@@ -38,12 +38,11 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Package Updates",
         "groups": [
           {
-            "group": "Unity API Integration",
+            "group": "Overview",
             "pages": [
-              "api-reference/introduction", 
               "api-reference/release-notes/index"]
           }
         ]
