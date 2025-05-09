@@ -23,7 +23,11 @@
           },
           {
             "group": "Using Coplay",
-            "pages": ["essentials/best-practices"]
+            "pages": [
+              "essentials/best-practices",
+              "essentials/customization",
+              "essentials/settings"
+            ]
           },
           {
             "group": "Configuration",
