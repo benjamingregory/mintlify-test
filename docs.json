@@ -23,9 +23,7 @@
           },
           {
             "group": "Using Coplay",
-            "pages": [
-              "essentials/best-practices"
-            ]
+            "pages": ["essentials/best-practices"]
           },
           {
             "group": "Configuration",
@@ -34,7 +32,7 @@
         ]
       },
       {
-        "tab": "Package Updates",
+        "tab": "Release Notes",
         "groups": [
           {
             "group": "Overview",
