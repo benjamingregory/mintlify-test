@@ -1,12 +1,11 @@
 ---
-title: "Customizing Coplay"
-description: "Use Coplay's customizations options to tailor your experience"
+title: "Customization"
+description: "Use Coplay's customizations to tailor your experience"
 ---
 
 Coplay integrates seamlessly with Unity through an intuitive interface designed to enhance your game development workflow. This guide explains all the UI elements you'll encounter when using Coplay.
 
-<AccordionGroup>
-<Accordion title="Context">
+## Context
 
 The Context dropdown determines what information Coplay has access to when responding to your queries:
 
@@ -18,9 +17,7 @@ The Context dropdown determines what information Coplay has access to when respo
 
 **Example usage**: Select "Active Scene" when asking Coplay to help optimize game objects in your current scene, or select "Project Settings" when troubleshooting configuration issues.
 
-</Accordion>
-
-<Accordion title="Mode Selection">
+## Mode
 
 The Mode dropdown lets you select specialized AI modes optimized for different tasks:
 
@@ -31,11 +28,10 @@ The Mode dropdown lets you select specialized AI modes optimized for different t
 
 **Example usage**: Switch to "SceneGeneration" mode when asking Coplay to help design a level layout, or use "UIGeneration" when working on your game's user interface elements.
 
-</Accordion>
 
-<Accordion title="Model Selection">
+## Model
 
-Coplay lets you choose between different AI models, each with its own strengths:
+Coplay lets you choose between the latest AI models from the major foundational providers, e.g. OpenAI, Anthropic, Google, X.AI. Each of these models carries with it its own strengths:
 
 - **claude-3-7-sonnet**: Balanced model with strong reasoning capabilities (default)
 - **gpt-4.1**: Advanced model with strong code generation
@@ -45,9 +41,19 @@ Coplay lets you choose between different AI models, each with its own strengths:
 
 **Example usage**: Select "claude-3-7-sonnet" for complex programming tasks, or switch to "o4-mini" when you need quick responses for simpler questions.
 
-</Accordion>
 
-<Accordion title="Action Recording">
+## Context
+The action context dropdown (showing "move" in the example) lets you specify what type of operation you're performing. This helps Coplay understand and assist with specific actions like:
+
+- Moving objects
+- Scaling objects
+- Rotating objects
+- Adding components
+- And more
+
+**Example usage**: Select "move" when positioning objects in a scene, then ask Coplay for suggestions on optimal placement.
+
+## Action Recording
 
 Coplay can record your actions in the Unity Editor, allowing you to:
 
@@ -59,21 +65,3 @@ Coplay can record your actions in the Unity Editor, allowing you to:
 When you've finished recording actions, you can save them with a custom name:
 
 **Example usage**: Record a sequence of object placements to document your level design process, then ask Coplay to analyze the pattern or suggest improvements.
-
-</Accordion>
-
-<Accordion title="Action Context">
-
-The action context dropdown (showing "move" in the example) lets you specify what type of operation you're performing. This helps Coplay understand and assist with specific actions like:
-
-- Moving objects
-- Scaling objects
-- Rotating objects
-- Adding components
-- And more
-
-**Example usage**: Select "move" when positioning objects in a scene, then ask Coplay for suggestions on optimal placement.
-
-</Accordion>
-
-</AccordionGroup>
