@@ -24,11 +24,7 @@
           {
             "group": "Using Coplay",
             "pages": [
-              "essentials/best-practices",
-              "essentials/code",
-              "essentials/images",
-              "essentials/navigation",
-              "essentials/ui-images-guide"
+              "essentials/best-practices"
             ]
           },
           {
