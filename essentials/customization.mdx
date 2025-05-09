@@ -28,21 +28,33 @@ The Mode dropdown lets you select specialized AI modes optimized for different t
 
 **Example usage**: Switch to "SceneGeneration" mode when asking Coplay to help design a level layout, or use "UIGeneration" when working on your game's user interface elements.
 
-
 ## Model
 
-Coplay lets you choose between the latest AI models from the major foundational providers, e.g. OpenAI, Anthropic, Google, X.AI. Each of these models carries with it its own strengths:
+Coplay lets you choose between the latest AI models from major foundational providers like OpenAI, Anthropic, Google, and X.AI. Each model offers distinct advantages for different Unity development tasks:
 
-- **claude-3-7-sonnet**: Balanced model with strong reasoning capabilities (default)
-- **gpt-4.1**: Advanced model with strong code generation
-- **o3** / **o4-mini**: Faster response times for simpler queries
-- **grok-3**: Alternative model with different reasoning patterns
-- **gemini-2-5-pro** / **gemini-2-5-flash**: Google's AI models with varying capabilities
+#### Anthropic
+
+- **claude-3-7-sonnet**: (Default) Balanced model with exceptional reasoning capabilities and deep understanding of Unity concepts. Excellent for complex architectural decisions, debugging logic errors, and explaining game mechanics. Provides detailed, well-structured responses with strong code quality.
+
+#### OpenAI
+
+- **gpt-4.1**: Superior code generation with extensive Unity API knowledge. Excels at implementing complex gameplay systems, shader programming, and optimizing performance-critical code. Provides detailed code explanations and generates comprehensive solutions for challenging technical problems.
+- **o3**: Fast, cost-effective model for straightforward development tasks. Good for quick syntax questions, simple script generation, and basic Unity workflow assistance. Ideal for rapid iteration during prototyping phases.
+- **o4-mini**: Optimized for quick responses with good balance of speed and capability. Effective for common Unity tasks like component setup, basic animations, and UI scripting. Provides concise, practical answers without extensive explanations.
+
+### X.AI
+
+- **grok-3**: Novel reasoning approach that excels at creative problem-solving and unconventional solutions. Particularly strong with procedural generation, AI behavior systems, and mathematical problems in game development. Offers unique perspectives that other models might not consider.
+
+### Google
+
+- **gemini-2-5-pro**: Comprehensive knowledge of Unity's ecosystem with strong multimodal capabilities. Excels at analyzing visual elements, scene composition, and asset organization. Particularly effective for graphics programming, shader development, and performance optimization tasks.
+- **gemini-2-5-flash**: Optimized for speed and efficiency with good baseline understanding of Unity concepts. Ideal for quick reference questions, syntax checking, and basic troubleshooting. Best choice when you need immediate guidance on common development challenges.
 
 **Example usage**: Select "claude-3-7-sonnet" for complex programming tasks, or switch to "o4-mini" when you need quick responses for simpler questions.
 
-
 ## Context
+
 The action context dropdown (showing "move" in the example) lets you specify what type of operation you're performing. This helps Coplay understand and assist with specific actions like:
 
 - Moving objects
